@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Responsive Starbucks Landing Page</title>
+    <link rel="icon" type="image/png" href="media/logo.png" />
+  </head>
+  <body>
+    <section>
+      <div class="circle"></div>
+      <header>
+        <a href="#"><img title="logo" src="media/logo.png" class="logo" /></a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">What's New</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h2>It's not just a Coffee<br />It's <span>Starbucks</span></h2>
+          <p>
+            Whether you're searching for something new to warm your mug, seeking
+            the best brew method for your favorite blend or exploring our rarest
+            offerings, you’ve come to the right place.
+          </p>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="imgBox">
+          <img src="media/img1.png" class="starbucks" alt="#" />
+        </div>
+      </div>
+      <ul class="thumb">
+        <li>
+          <img
+            title="thumb1"
+            src="media/thumb1.png"
+            onclick="imgSlider('media/img1.png'); changeCircleColor('#003b23')"
+          />
+        </li>
+        <li>
+          <img
+            title="thumb2"
+            src="media/thumb2.png"
+            onclick="imgSlider('media/img2.png'); changeCircleColor('#ee8ca8ee')"
+          />
+        </li>
+        <li>
+          <img
+            title="thumb3"
+            src="media/thumb3.png"
+            onclick="imgSlider('media/img3.png'); changeCircleColor('#d752b1')"
+          />
+        </li>
+      </ul>
+      <ul class="social">
+        <li>
+          <a href="#"><img src="media/Facebook.png" alt="#" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="media/instagram.png" alt="#" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="media/twitter.png" alt="#" /></a>
+        </li>
+      </ul>
+    </section>
+    <script type="text/javascript">
+      function imgSlider(anything) {
+        document.querySelector(".starbucks").src = anything;
+      }
+
+      function changeCircleColor(color) {
+        const circle = document.querySelector(".circle");
+        circle.style.background = color;
+      }
+
+      function toggleMenu() {
+        var menuToggle = document.querySelector(".toggle");
+        var navigation = document.querySelector(".navigation");
+        menuToggle.classList.toggle("active");
+        navigation.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
